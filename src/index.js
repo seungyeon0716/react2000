@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-function helloName(name){
-  return name.nick;
+// let clock = document.getElementById("clock");
+
+// setInterval(function(){
+//   clock.innerHTML = new Date().toLocaleTimeString();
+// });
+
+function clock(){
+  const element = (
+    <div>
+      <h1>Hello, SY</h1>
+      <h2>지금은 { new Date().toLocaleTimeString()}입니다.</h2>
+    </div>
+  )
+  ReactDom.render(element, document.getElementById("root"));
 }
 
-const name = {
-  nick : "SY",
-}
-
-const hello = <h1>Hello{helloName(name)}</h1>
-
-ReactDom.render(hello, document.getElementById("root"));
+setInterval(clock, 1000);
